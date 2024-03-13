@@ -1,3 +1,4 @@
+import React from "react";
 import { useAppSelector } from "../store/store";
 
 const List = () => {
@@ -5,18 +6,18 @@ const List = () => {
   return (
     <div className="rounded-md shadow border m-2 p-2">
       <p>This is List Components</p>
-      <table>
+      <table className="rounded-md">
         <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
+          <tr className="bg-gradient-to-b from-sky-400 to-sky-600 text-white  ">
+            <th className="p-2 border rounded">ID</th>
+            <th className="p-2 border rounded">Name</th>
           </tr>
         </thead>
         <tbody>
           {persons.map((person) => (
-            <tr key={person.id}>
-              <td>{person.id}</td>
-              <td>{person.name}</td>
+            <tr className="even:bg-slate-50" key={person.id}>
+              <td className="p-2">{person.id}</td>
+              <td className="p-2">{person.name}</td>
             </tr>
           ))}
         </tbody>

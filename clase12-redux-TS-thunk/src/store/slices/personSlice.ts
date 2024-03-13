@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Person {
   id: number;
@@ -13,9 +13,10 @@ const initialState: PersonState = {
   persons: [],
 };
 
+
 export const PersonSlice = createSlice({
   name: "person",
-  initialState: initialState,
+  initialState,
   reducers: {
     addPerson: (state, action: PayloadAction<{ name: string }>) => {
       state.persons.push({
@@ -24,6 +25,7 @@ export const PersonSlice = createSlice({
       });
     },
   },
+
 });
 
 export default PersonSlice.reducer;
