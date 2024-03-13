@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Person {
   id: number;
@@ -13,8 +13,7 @@ const initialState: PersonState = {
   persons: [],
 };
 
-
-export const PersonSlice = createSlice({
+export const personSlice = createSlice({
   name: "person",
   initialState,
   reducers: {
@@ -24,9 +23,10 @@ export const PersonSlice = createSlice({
         name: action.payload.name,
       });
     },
-  },
+    //tarea: implementa un nuevo reducer encargado de eliminar una person
 
+  },
 });
 
-export default PersonSlice.reducer;
-export const { addPerson } = PersonSlice.actions;
+export default personSlice.reducer;
+export const { addPerson } = personSlice.actions;

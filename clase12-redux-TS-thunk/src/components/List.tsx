@@ -1,7 +1,8 @@
 import React from "react";
-import { useAppSelector } from "../store/store";
+import { useAppDispatch, useAppSelector } from "../store/store";
 
 const List = () => {
+  const dispatch = useAppDispatch();
   const persons = useAppSelector((state) => state.person.persons);
   return (
     <div className="rounded-md shadow border m-2 p-2">
@@ -15,10 +16,12 @@ const List = () => {
         </thead>
         <tbody>
           {persons.map((person) => (
-            <tr className="even:bg-slate-50" key={person.id}>
-              <td className="p-2">{person.id}</td>
-              <td className="p-2">{person.name}</td>
-            </tr>
+            <>
+              <tr className="even:bg-slate-50" key={person.id}>
+                <td className="p-2">{person.id}</td>
+                <td className="p-2">{person.name}</td>
+              </tr>
+            </>
           ))}
         </tbody>
       </table>

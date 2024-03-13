@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { addPerson, savePerson } from "../store/slices/personSlice";
+import { addPerson } from "../store/slices/personSlice";
 import { useAppDispatch } from "../store/store";
 
 const Add = () => {
